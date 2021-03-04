@@ -27,7 +27,7 @@ int main (){
 			printf("Resultado:\n%d\n", resultado);
 		}else if(i == 4){
 			resultado = num1 /num2;
-      num1 %= num2;
+      		num1 %= num2;
 			printf("Resultado:\n%d(%d)\n", resultado, num1);
 		}else{
 			printf("Opcao invalida!\n");
