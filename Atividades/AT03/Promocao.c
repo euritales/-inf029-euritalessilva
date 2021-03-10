@@ -26,4 +26,3 @@ float promocao_alcool(float litro)
 	return (valor);
 	
   }
-
