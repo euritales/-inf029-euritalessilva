@@ -22,116 +22,107 @@
 
 void testSomar();    //função utilizada para testes
 void testFatorial(); //função utilizada para testes
-void testQ1();
-void testQ2();
-void testQ3();
-void testQ4();
-void testQ5();
-void testQ6();
+//void testQ1();
+ //void testQ2();
+ void testQ3();
+ void testQ4();
+ void testQ5();
+ void testQ6();
 
 int main()
 {
     testSomar();
-    //testFatorial();
-    testQ1();
-    testQ2();
+    testFatorial();
+    // testQ1();
+    //testQ2();
     testQ3();
     testQ4();
     testQ5();
     testQ6();
 }
 
-int main()
-{
-    //digita a data
-    char data[11];
-    //ler a data em "data"
-    validarData(data);
-}
 
-void testSomar()
-{
+void testSomar(){
     printf("%d\n", somar(3, 4) == 7);
-    printf("%d\n", somar(-1, -3) == 2);
+    printf("%d\n", somar(-1, -3) == -4);
     printf("%d\n", somar(-6, 6) == 0);
     printf("%d\n", somar(74, 9) == 83);
     printf("%d\n", somar(30, -9) == 21);
 }
 
-void testFatorial()
-{
+void testFatorial(){
     printf("%d\n", fatorial(3) == 6);
     printf("%d\n", fatorial(1) == 1);
     printf("%d\n", fatorial(5) == 120);
 }
 
-void testQ1()
-{
-    char str[11];
-    strcpy(str, "29/02/2015");
-    printf("%d\n", q1(str) == 0);
-    strcpy(str, "29/02/2012");
-    printf("%d\n", q1(str) == 1);
-    strcpy(str, "9/13/2014");
-    printf("%d\n", q1(str) == 0);
-    strcpy(str, "45/4/2014");
-    printf("%d\n", q1(str) == 0);
-    strcpy(str, "/9/2014");
-    printf("%d\n", q1(str) == 0);
-}
+// void testQ1()
+// {
+//     char str[11];
+//     strcpy(str, "29/02/2015");
+//     printf("%d\n", q1(str) == 0);
+//     strcpy(str, "29/02/2012");
+//     printf("%d\n", q1(str) == 1);
+//     strcpy(str, "9/13/2014");
+//     printf("%d\n", q1(str) == 0);
+//     strcpy(str, "45/4/2014");
+//     printf("%d\n", q1(str) == 0);
+//     strcpy(str, "/9/2014");
+//     printf("%d\n", q1(str) == 0);
+// }
 
-void testQ2()
-{
-    char datainicial[11], datafinal[11];
-    int qtdDias, qtdMeses, qtdAnos;
-    int retorno;
+// void testQ2()
+// {
+//     char datainicial[11], datafinal[11];
+//     int qtdDias, qtdMeses, qtdAnos;
+//     int retorno;
 
-    //teste 1
-    qtdDias = -1;
-    qtdMeses = -1;
-    qtdAnos = -1;
+//     //teste 1
+//     qtdDias = -1;
+//     qtdMeses = -1;
+//     qtdAnos = -1;
 
-    strcpy(datainicial, "01/06/2015");
-    strcpy(datafinal, "01/06/2016");
-    retorno = q2(datainicial, datafinal, &qtdDias, &qtdMeses, &qtdAnos);
-    printf("%d\n", retorno == 1);
-    printf("%d\n", qtdDias == 0);
-    printf("%d\n", qtdMeses == 0);
-    printf("%d\n", qtdAnos == 1);
+//     strcpy(datainicial, "01/06/2015");
+//     strcpy(datafinal, "01/06/2016");
+//     retorno = q2(datainicial, datafinal, &qtdDias, &qtdMeses, &qtdAnos);
+//     printf("%d\n", retorno == 1);
+//     printf("%d\n", qtdDias == 0);
+//     printf("%d\n", qtdMeses == 0);
+//     printf("%d\n", qtdAnos == 1);
 
-    //teste 2 - retornos
-    qtdDias = -1;
-    qtdMeses = -1;
-    qtdAnos = -1;
+//     //teste 2 - retornos
+//     qtdDias = -1;
+//     qtdMeses = -1;
+//     qtdAnos = -1;
 
-    strcpy(datainicial, "01/30/2015");
-    strcpy(datafinal, "01/06/2016");
-    retorno = q2(datainicial, datafinal, &qtdDias, &qtdMeses, &qtdAnos);
-    printf("%d\n", retorno == 2);
+//     strcpy(datainicial, "01/30/2015");
+//     strcpy(datafinal, "01/06/2016");
+//     retorno = q2(datainicial, datafinal, &qtdDias, &qtdMeses, &qtdAnos);
+//     printf("%d\n", retorno == 2);
 
-    strcpy(datainicial, "01/3/2015");
-    strcpy(datafinal, "40/06/2016");
-    retorno = q2(datainicial, datafinal, &qtdDias, &qtdMeses, &qtdAnos);
-    printf("%d\n", retorno == 3);
+//     strcpy(datainicial, "01/3/2015");
+//     strcpy(datafinal, "40/06/2016");
+//     retorno = q2(datainicial, datafinal, &qtdDias, &qtdMeses, &qtdAnos);
+//     printf("%d\n", retorno == 3);
 
-    strcpy(datainicial, "01/06/2016");
-    strcpy(datafinal, "01/06/2015");
-    retorno = q2(datainicial, datafinal, &qtdDias, &qtdMeses, &qtdAnos);
-    printf("%d\n", retorno == 4);
+//     strcpy(datainicial, "01/06/2016");
+//     strcpy(datafinal, "01/06/2015");
+//     retorno = q2(datainicial, datafinal, &qtdDias, &qtdMeses, &qtdAnos);
+//     printf("%d\n", retorno == 4);
 
-    //teste 3
-    qtdDias = -1;
-    qtdMeses = -1;
-    qtdAnos = -1;
+//     //teste 3
+//     qtdDias = -1;
+//     qtdMeses = -1;
+//     qtdAnos = -1;
 
-    strcpy(datainicial, "06/06/2017");
-    strcpy(datafinal, "07/07/2017");
-    retorno = q2(datainicial, datafinal, &qtdDias, &qtdMeses, &qtdAnos);
-    printf("%d\n", retorno == 1);
-    printf("%d\n", qtdDias == 1);
-    printf("%d\n", qtdMeses == 1);
-    printf("%d\n", qtdAnos == 0);
-}
+//     strcpy(datainicial, "06/06/2017");
+//     strcpy(datafinal, "07/07/2017");
+//     retorno = q2(datainicial, datafinal, &qtdDias, &qtdMeses, &qtdAnos);
+//     printf("%d\n", retorno == 1);
+//     printf("%d\n", qtdDias == 1);
+//     printf("%d\n", qtdMeses == 1);
+//     printf("%d\n", qtdAnos == 0);
+// }
 
 void testQ3()
 {
@@ -179,10 +170,10 @@ void testQ4()
 
 void testQ5()
 {
-    printf("%d\n", q5(345) == 543);
-    printf("%d\n", q5(78) == 87);
-    printf("%d\n", q5(3) == 3);
-    printf("%d\n", q5(5430) == 345);
+  printf("%d\n", q5(345) == 543);
+  printf("%d\n", q5(78) == 87);
+  printf("%d\n", q5(3) == 3);
+  printf("%d\n", q5(5430) == 345);
 }
 
 void testQ6()

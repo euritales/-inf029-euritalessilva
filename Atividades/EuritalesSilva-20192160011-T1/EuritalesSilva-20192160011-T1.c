@@ -25,6 +25,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include "EuritalesSilva-20192160011-T1.h"
 
 /*
 ## função utilizada para testes  ##
@@ -56,6 +57,10 @@ int somar(int x, int y)
 int fatorial(int x)
 { //função utilizada para testes
     int fat = 1;
+    
+    for(fat = 1; x > 1; x --){
+        fat = fat * x;
+    }
     return fat;
 }
 
@@ -72,112 +77,114 @@ int fatorial(int x)
     Não utilizar funções próprias de string (ex: strtok)   
     pode utilizar strlen para pegar o tamanho da string
  */
-int validarDatas(int dia, int mes, int ano);
-int verificadorData(char datas);
+/*
 int q1(char *data){
-    
-    int datavalida = 1;
-    int i = 0;
-    int j = 0;
-    int aux = 0;
-    char diaString[3];
-    char mesString[3];
-    char anoString[5];
-    int dia = 0;
-    int mes = 0;
-    int ano = 0;
-    int validar;
-    
-    for (i = 0; data[i] != '/'; i++){
+  
+  int datavalida = 1;
+  int i = 0;
+  int j = 0;
+  int aux = 0;
+  char diaString[3];
+  char mesString[3];
+  char anoString[5];
+  int dia = 0;
+  int mes = 0;
+  int ano = 0;
+  int validar;
+  
+  int validarDatas(int dia, int mes, int ano);
+  int verificadorData(char datas);
 
-        diaString[i] = data[i];
+  for (i = 0; data[i] != '/'; i++){
 
-        if(i > 2){
-            return 0;
-        }else if(verificadorData(diaString[i]) == 1){
-            return 0;
-        }
-    }
+      diaString[i] = data[i];
 
-    diaString[i] = '\0';
-    i++; 
-    
-    if(strlen(diaString) == 0){
-        return 0;
-    }else{
-        dia = atoi(dia);
-    }
+      if(i > 2){
+          return 0;
+      }else if(verificadorData(diaString[i]) == 1){
+          return 0;
+      }
+  }
 
-   for(j = i; data[j] != '/'; j++){
-        mesString[aux] = data[j];
+  diaString[i] = '\0';
+  i++; 
+  
+  if(strlen(diaString) == 0){
+      return 0;
+  }else{
+      dia = atoi(dia);
+  }
 
-        if(aux > 1){
-            return 0;
-        }else if(verificadorData(mesString[aux]) == 1){
-            return 0;
-        }
-        aux++;
-    }
+  for(j = i; data[j] != '/'; j++){
+      mesString[aux] = data[j];
 
-    mesString[j] = '\0';
-    j++;
+      if(aux > 1){
+          return 0;
+      }else if(verificadorData(mesString[aux]) == 1){
+          return 0;
+      }
+      aux++;
+  }
 
-    if(strlen(mesString) == 0){
-        return 0;
-    } 
+  mesString[j] = '\0';
+  j++;
 
-    mes = atoi(mesString);
+  if(strlen(mesString) == 0){
+      return 0;
+  } 
 
-    aux = 0;
+  mes = atoi(mesString);
 
-    for(i = j; i < strlen(data); i++, aux++){
-        
-        anoString[aux] = data[i];
+  aux = 0;
 
-        if(verificadorData(data[i]) == 1){
-            return 0;
-        }
-    }
+  for(i = j; i < strlen(data); i++, aux++){
+      
+      anoString[aux] = data[i];
 
-    if(aux != 2 || aux != 4){
-        return 0;
-    }else{
-        anoString[aux] = '\0';
-        ano = atoi(anoString);
-    }
+      if(verificadorData(data[i]) == 1){
+          return 0;
+      }
+  }
 
-    validar = validarDatas(dia, mes, ano);
-    
-    return validar;
+  if(aux != 2 || aux != 4){
+      return 0;
+  }else{
+      anoString[aux] = '\0';
+      ano = atoi(anoString);
+  }
+
+  validar = validarDatas(dia, mes, ano);
+  
+  return validar;
 }
-    
-    int validarDatas(int dias, int meses, int anos){
-    
-        if((dias < 1 || dias > 31) || (meses < 1 || meses > 12) || (anos < 1 || anos > 2020)){
-            return 0;
-        }
-        
-        if (dias > 29 && (meses == 2 && anos % 4 == 0 || anos % 400 == 0 && anos % 100 != 0)){
-            return 0;
-        }
-        if (dias > 28 && (meses == 2 && anos % 4 != 0 || anos % 400 != 0 && anos % 100 == 0)){
-            return 0;
-        } 
-        if (dias > 30 && (meses == 4 || meses == 6 || meses == 9 || meses == 11)){
-            return 0;
-        }
-        return 1;
-    }
-    
-    int verificadorData(char datas){
-        
-        if (datas < 48 || datas > 57){
-        return 1;
-        }else{
-            return 0;
-        }
-    }
-   
+  
+  int validarDatas(int dias, int meses, int anos){
+  
+      if((dias < 1 || dias > 31) || (meses < 1 || meses > 12) || (anos < 1 || anos > 2020)){
+          return 0;
+      }
+      
+      if (dias > 29 && ((meses == 2 && anos % 4 == 0) || (anos % 400 == 0 && anos % 100 != 0))){
+          return 0;
+      }
+      if (dias > 28 && ((meses == 2 && anos % 4 != 0 )|| (anos % 400 != 0 && anos % 100 == 0))){
+          return 0;
+      } 
+      if (dias > 30 && (meses == 4 || meses == 6 || meses == 9 || meses == 11)){
+          return 0;
+      }
+      return 1;
+  }
+  
+  int verificadorData(char datas){
+      
+      if (datas < 48 || datas > 57){
+      return 1;
+      }else{
+          return 0;
+      }
+  }
+  */
 /*
  Q2 = diferença entre duas datas
  @objetivo
@@ -192,26 +199,7 @@ int q1(char *data){
  */
 int q2(char *datainicial, char *datafinal, int *qtdDias, int *qtdMeses, int *qtdAnos)
 {
-
-    //calcule os dados e armazene nas três variáveis a seguir
-    int nDias, nMeses, nAnos;
-
-    if (q1(datainicial) == 0)
-        return 2;
-
-    nDias = 4;
-    nMeses = 10;
-    nAnos = 2;
-
-    /*mantenha o código abaixo, para salvar os dados em 
-    nos parâmetros da funcao
-    */
-    *qtdDias = nDias;
-    *qtdAnos = nAnos;
-    *qtdMeses = nMeses;
-
-    //coloque o retorno correto
-    return 1;
+    return 0;
 }
 
 /*
@@ -307,12 +295,18 @@ int q4(char *strTexto, char *strBusca, int posicoes[30])
 int q5(int num)
 {
     int novoNumero = 0;
-
-    novoNumero = (((num % 100) % 10) * 100) + (((num % 100) / 10) * 10) + (num / 100);
-    // 543 = 300+40+3
-    num = novoNumero;
-
-    return num;
+    if(num < 10){
+        return num;
+    }else if(num > 10 && num < 100){
+        num = ((num % 100) / 10) + ((num % 10) * 10);
+        return num;
+    }else if (num > 100 && num < 1000){
+        num = (((num % 100) % 10) * 100) + (((num % 100) / 10) * 10) + (num / 100);
+        return num;
+    }else{
+        num = ((((num % 1000) % 100)%10) * 1000) + ((((num % 1000)%100) / 10) * 100) +(((num % 1000) / 100) * 10) + (num / 1000);
+        return num;
+    }
 }
 
 /*
